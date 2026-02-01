@@ -1,0 +1,24 @@
+services:
+  openclaw:
+    build: .
+    container_name: openclaw-sandbox
+    volumes:
+      - ./workspace:/app/workspace
+      - ./logs:/app/logs
+      - ./.openclaw:/root/.openclaw
+    environment:
+      - OPENCLAW_GATEWAY_BIND=lan
+      - OPENCLAW_GATEWAY_URL=ws://0.0.0.0:18789
+      # Set this in .env after first onboarding
+      - OPENCLAW_GATEWAY_TOKEN
+      # FOR LM STUDIO CONNECTION. ENSURE CORS ENABLED
+      - OPENAI_API_KEY=lm_studio
+      - OPENAI_BASE_URL=http://host.docker.internal:1234/v1
+      - LOG_LEVEL=info
+    ports:
+      - "18789:18789"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    stdin_open: true
+    tty: true
+    command: openclaw gateway
