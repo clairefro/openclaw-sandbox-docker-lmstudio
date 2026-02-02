@@ -1,0 +1,53 @@
+{
+  "models": {
+    "providers": {
+      "lmstudio": {
+        "baseUrl": "http://host.docker.internal:1234/v1",
+        "apiKey": "lm-studio",
+        "api": "openai-responses",
+        "models": [
+          {
+            "id": "gpt-oss-20b",
+            "name": "GPT-OSS 20B",
+            "input": ["text"],
+            "contextWindow": 32768,
+            "maxTokens": 8192
+          }
+        ]
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "lmstudio/gpt-oss-20b"
+      },
+      "workspace": "/app/workspace",
+      "compaction": {
+        "mode": "safeguard"
+      },
+      "maxConcurrent": 4,
+      "subagents": {
+        "maxConcurrent": 8
+      }
+    }
+  },
+  "gateway": {
+    "port": 18789,
+    "bind": "lan",
+    "mode": "local",
+    "auth": {
+      "mode": "token",
+      "token": "YOUR TOKEN"
+    },
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
+    }
+  },
+  "skills": {
+    "install": {
+      "nodeManager": "npm"
+    }
+  }
+}

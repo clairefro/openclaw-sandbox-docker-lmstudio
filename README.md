@@ -28,6 +28,7 @@ Only tested on Mac so far...
 
 ### 3. Start the OpenClaw TUI (Chat Interface)
 
+- Run `./start.sh` to boot up gateway
 - Open a new terminal tab/window.
 - Run:
 
@@ -44,61 +45,6 @@ Only tested on Mac so far...
   - **Base URL:** `http://host.docker.internal:1234/v1`
   - **API Key:** lm-studio
   - **Model ID:** (Enter the Identifier shown in LM Studio)
-
----
-
-    ./tui.sh
-    ```
-
-- This will connect to the running gateway and launch the chat interface.
-
-4. **Configure Connection (Onboarding Wizard)**
-
-- If prompted, use these values:
-  - Provider: OpenAI-Compatible (API Key type)
-  - Base URL: `http://host.docker.internal:1234/v1`
-  - API Key: lm-studio
-  - Model ID: (Enter the Identifier shown in LM Studio)
-
----
-
-    "providers": {
-      "lmstudio": {
-        "baseUrl": "http://host.docker.internal:1234/v1",
-        "apiKey": "lm-studio",
-        "api": "openai-responses"
-      }
-    }
-
-},
-"agents": {
-"defaults": {
-"model": {
-"primary": "lmstudio/your-model-id"
-},
-"workspace": "/app/workspace"
-}
-}
-}
-
-````
-
----
-
-## Folder Organization
-
-- /workspace: The AI agent only has access to files within this directory.
-- /.openclaw: Stores configuration, session data, and gateway tokens.
-
-## running commands in the Docker container
-
-```sh
-# find running container name
-docker ps
-
-# then exec in
-docker exec -it <container_name> bash
-````
 
 ## Troubleshooting
 
