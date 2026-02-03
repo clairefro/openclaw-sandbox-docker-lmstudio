@@ -24,7 +24,7 @@ Only tested on Mac so far...
   ./start.sh
   ```
 
-- first run will trigger openclaw onboarding wizard
+- first run will trigger openclaw onboarding wizard. see openclaw.example.json for connection url, api key and model selection example if using LM Studio local model on host machine
 
 - subsequent runs will start the OpenClaw gateway in your terminal. Leave this tab open.
 
@@ -36,14 +36,6 @@ Only tested on Mac so far...
   ```
 
 - This will connect the openclaw TUI to the running gateway and launch the chat interface
-
-### 3. Configure Connection (Onboarding Wizard)
-
-- If prompted, use these values:
-  - **Provider:** OpenAI-Compatible (API Key type)
-  - **Base URL:** `http://host.docker.internal:1234/v1`
-  - **API Key:** lm-studio
-  - **Model ID:** (Enter the Identifier shown in LM Studio)
 
 ## Troubleshooting
 
