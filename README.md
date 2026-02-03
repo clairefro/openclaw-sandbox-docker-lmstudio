@@ -24,11 +24,10 @@ Only tested on Mac so far...
   ./start.sh
   ```
 
-- This will start the OpenClaw gateway in your terminal. Leave this tab open.
+- first run will trigger openclaw onboarding wizard
 
-### 3. Start the OpenClaw TUI (Chat Interface)
+- subsequent runs will start the OpenClaw gateway in your terminal. Leave this tab open.
 
-- Run `./start.sh` to boot up gateway
 - Open a new terminal tab/window.
 - Run:
 
@@ -36,9 +35,9 @@ Only tested on Mac so far...
   ./tui.sh
   ```
 
-- This will connect to the running gateway and launch the chat interface.
+- This will connect the openclaw TUI to the running gateway and launch the chat interface
 
-### 4. Configure Connection (Onboarding Wizard)
+### 3. Configure Connection (Onboarding Wizard)
 
 - If prompted, use these values:
   - **Provider:** OpenAI-Compatible (API Key type)
